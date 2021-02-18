@@ -29,7 +29,7 @@ const Context = (props) => {
         const {email, password}=user;
         try{
         const temp=await auth.signInWithEmailAndPassword(email,password);
-        console.log(temp);
+        //console.log(temp);
         setModel(false);
     }catch(e){
         alert(e);

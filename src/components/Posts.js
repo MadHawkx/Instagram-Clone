@@ -9,7 +9,7 @@ const Posts = () => {
     const[image,setImage]=React.useState('');
     const handleImageUpload=(e)=>{
         setImage(e.target.files[0]);
-        console.log(user);
+        //console.log(user);
 
         if(e.target.files[0]===undefined){
             const temp=document.getElementsByClassName("Post__upload--file--details")[0];
