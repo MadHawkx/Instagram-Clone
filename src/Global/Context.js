@@ -22,7 +22,7 @@ const Context = (props) => {
         temp.user.updateProfile({displayName:username})
         setModel(false);
         }catch(e){
-            console.log(e);
+            alert(e);
         }
     }
     const login=async(user)=>{
