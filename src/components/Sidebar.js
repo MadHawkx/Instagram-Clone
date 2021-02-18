@@ -7,7 +7,7 @@ const Sidebar = () => {
     const username=!loader&&user?user.displayName:'';
     return (
         <div className="Sidebar">
-            {!loader && user? 
+            {!loader && user &&username!=null ? 
             <div className="Sidebar__user">
             <div className="Sidebar__user--avatar">
                 {username[0]}
