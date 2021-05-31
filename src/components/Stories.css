@@ -1,8 +1,7 @@
 .Stories{
     display: flex;
+    margin-top: 70px;
     background: var(--white);
-    width: 66%;
-    padding: 10px 0;
     border:1px solid #efefef;
     border-radius: 5px;
     overflow:auto;

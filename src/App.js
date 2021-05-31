@@ -15,8 +15,8 @@ const App=()=> {
       <Stories/>
       <Posts/>
       <PostsDisplay/>
+      </div>
       <Sidebar/>
-      </div>      
      <Model/>
     </Context>
   );

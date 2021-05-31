@@ -12,9 +12,12 @@ const Sidebar = () => {
             <div className="Sidebar__user--avatar">
                 {username[0]}
             </div>
+            {username.length < 12?
             <div className="Sidebar__user--name">
                 {username}
             </div>
+            :''
+            }
         </div>    
         :''
         }

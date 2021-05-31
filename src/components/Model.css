@@ -1,6 +1,6 @@
 .Model__main{
     width:100%;
-    height:100vh;
+    height:100%;
     background: rgba(0,0,0,0.70);
     top:0;
     left:0;
@@ -31,7 +31,7 @@
     left: 99%;
     font-size: 2.3rem;
     cursor: pointer;
-    color: #f83a63;
+    color: #fff;
     z-index: 1;
 }
 
@@ -75,3 +75,36 @@
     color:var(--white);
     left:21%;
 }
+
+
+@media only screen and (max-width: 483px){
+    .Model__form--close{
+        left: 93%;
+        bottom: 105%;
+    }
+}
+
+
+@media only screen and (max-width: 420px){
+    .Model__form--close{
+        left: 88%;
+        bottom: 105%;
+    }
+
+    .Model__container{
+        width: 330px;
+    }
+}
+
+@media only screen and (max-width: 350px){
+    .Model__form--close{
+        left: 88%;
+        bottom: 105%;
+    }
+
+    .Model__container{
+        width: 260px;
+    }
+}
+
+

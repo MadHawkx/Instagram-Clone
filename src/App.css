@@ -31,13 +31,12 @@ body{
 /* Navbar css is in its own file */
 
 .container{
-  width:100%;
-  padding:0 300px;
+  width:65%;
+  padding:0 0 0 18%;
   margin-top:70px;
 }
 
 .Posts{
-  width:66%;
   margin: 1rem 0;
   background-color: var(--white);
   border: 1px solid #efefef;
@@ -46,14 +45,13 @@ body{
 }
 
 .PostsDisplay{
-  width: 66%;
   margin:1rem 0;
   background: var(--white);
 }
 
 .Sidebar{
   position: fixed;
-  width: 30%;
+  width: 22%;
   top:80px;
   padding-left: 1.5rem;
   right:2.5rem;
@@ -82,18 +80,81 @@ body{
   text-transform: capitalize;
 }
 
-@media only screen and (max-width: 600px){
+
+
+@media only screen and (max-width: 936px){
+    .container{
+      width: 600px;
+      margin: auto auto;
+      text-align: center;
+      padding: 0;
+      overflow: hidden
+    }
+
+    .Sidebar{
+      display: none;
+    }
+
+    .PostsDisplay{
+      width: 80%;
+    margin: 3rem auto;
+    background: var(--white);
+  }
+}
+
+
+@media only screen and (max-width: 626px){
+    .container{
+      width: 450px;
+      margin: auto;
+  }
+}
+
+@media only screen and (max-width: 467px){
+    .container{
+      width: 380px;
+      margin: auto;
+  }
+}
+@media only screen and (max-width: 400px){
+    .container{
+      width: 320px;
+      margin: auto;
+  }
+}
+
+@media only screen and (max-width: 320px){
+    .container{
+      width: 280px;
+      margin: auto;
+  }
+}
+
+/*@media only screen and (max-width: 1000px){
   .container{
     width:100%;
     padding:0 150px;
     margin-top:40px;
   }
-  
+  .Posts{
+  width:80%;
+  margin: auto;
+  background-color: var(--white);
+  border: 1px solid #efefef;
+  padding: 0.6rem;
+  border-radius: 4px;
+}
+
+.PostsDisplay{
+  width: 66%;
+  margin:1rem 0;
+  background: var(--white);
+}
 
 .Sidebar{
   display: none;
 }
-}
+}*/
 /* @media only screen and (min-width: 600px){
   .container{
     width:100%;

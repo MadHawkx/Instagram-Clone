@@ -53,7 +53,7 @@ const Context = (props) => {
             currentTime:firebase.firestore.FieldValue.serverTimestamp()
         });
 
-    } 
+    }
 
     React.useEffect(()=>{
         auth.onAuthStateChanged(user=>{
@@ -71,12 +71,12 @@ const Context = (props) => {
                 }
             )))
         })
-    })
+    },[])
 
     const create=data=>{
-        const{caption,image}=data; 
+        const{caption,image}=data;
         const upload=storage.ref(`images/${image.name}`).put(image);
-        
+
         upload.on("state_changed",(snapshot)=>{
         // We can manage the progress of upload process here, here snapshot gives us info about image upload
         let progress=(snapshot.bytesTransferred / snapshot.totalBytes )*100;
@@ -96,17 +96,18 @@ const Context = (props) => {
                             currentTime:firebase.firestore.FieldValue.serverTimestamp(),
                         })
                     })
-           
+
         })
     }
-    
+
     return (
         <ContextProvider.Provider value={{model,openModel,closeModel,register,login,user,loader,logout,create,posts,addComment}} >
             {props.children}
-        </ContextProvider.Provider> 
+        </ContextProvider.Provider>
     )
 }
 
-export default Context
-//Here props.children are the child components like Navbar component etc
-//See app.js we have wrapped our components with <Context> and those are its children in {props.children}
+export default Context;
+
+// Here props.children are the child components like Navbar component etc
+// See app.js we have wrapped our components with <Context> and those are its children in {props.children} -->

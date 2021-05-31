@@ -3,7 +3,7 @@ import './Model.css';
 
 
 import {ContextProvider} from '../Global/Context';
-import {GrFormClose} from 'react-icons/gr';
+import {AiFillCloseCircle} from 'react-icons/ai';
 
 const Model = () => {
     const {model,closeModel,register,login}=React.useContext(ContextProvider);
@@ -55,13 +55,15 @@ const Model = () => {
             password:""
         })
     }
+
+
     if(model){
         return (
             <div className="Model__main">
                 <div className="Model__container">
                     <p className="Model__container--txt">Login/Register to Instagram</p>
                         <div>
-                            <GrFormClose className= "Model__form--close" onClick={ModelClose}/>
+                            <AiFillCloseCircle className= "Model__form--close" onClick={ModelClose}/>
                         </div>
                     {state.Register?
                     (<div className="Model__form">

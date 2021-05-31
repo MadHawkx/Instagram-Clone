@@ -15,17 +15,49 @@ const Navbar = () => {
         openModel();
     } 
 
+    const dropDown=()=>{
+        // const list=document.getElement
+        const getDrop=document.getElementsByClassName('dropDown')[0]
+        // if(e.target.parentNode.children[1].classList[0]==="dropDownList"){
+        //     e.target.parentNode.children[1].className="dropdown";
+        // }
+        // else{
+        //     e.target.parentNode.children[1].className="dropDownList";
+        // }
+        //if(getDrop.)
+       if(getDrop.getElementsByClassName('select')[0]){
+            const drop=getDrop.getElementsByClassName('select')[0];
+            if(drop.classList[1]==="dropDownList"){
+                drop.classList.remove("dropDownList");
+                drop.classList.add("dropdown");
+            }
+            else{
+                 drop.classList.add("dropDownList");
+                 drop.classList.remove("dropdown");
+            }
+       }
+    }
+
     const isLoggedIn=()=>{
         return !loader?(!loader&&user?
-        <p className="Navbar__last--login">{user.displayName}/<span onClick={logoutForm}>logout</span></p>:
+        <p className="Navbar__last--login"><span onClick={dropDown} className="Navbar__user--avatar">
+                {user.displayName[0]}
+                </span> </p>:
         (<p className="Navbar__last--login" onClick={loginForm}>Register/Login</p>)):
         ("...")
     }
 
     const logoutForm=()=>{
+        const getDrop=document.getElementsByClassName('dropDown')[0]
+        const drop=getDrop.getElementsByClassName('select')[0];
+            if(drop.classList[1]!=="dropDownList"){
+                drop.classList.add("dropDownList");
+                drop.classList.remove("dropdown");
+            }
        logout();
     }
     return (
+        <>
         <div className="Navbar__main">
             <div className="Navbar__first">
                 <div className="Navbar__first__logo">
@@ -56,6 +88,14 @@ const Navbar = () => {
                 </li>
             </div>
         </div>
+         <div className="dropDown">
+        <div className="select dropDownList">
+            <div className="dropdown-content">
+            <span onClick={logoutForm}>Logout</span>
+            </div>
+        </div>
+        </div>
+        </>
     )
 }
 

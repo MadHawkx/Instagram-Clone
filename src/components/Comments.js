@@ -8,7 +8,7 @@ const Comments = (props) => {
     const postComment=e=>{
         e.preventDefault();
         addComment({id:props.id,comment:state})
-        setState(""); 
+        setState("");
     }
     React.useEffect(()=>{
         db.collection("posts").doc(props.id).collection("comments").orderBy("currentTime","desc").onSnapshot(snp=>{
@@ -16,33 +16,33 @@ const Comments = (props) => {
                 return (doc.data());
             }))
         })
-        
+
     })
 
     return (
         <div className="Comments">
             {comments.map(comment=>(
-                <div className="Comments__main" key={comment.id}> 
+                <div className="Comments__main" key={comment.id}>
                     <div className="Comments__main--name" >
                         {comment.username}
                     </div>
-                    
-                    <div className="Comments__main--comment">
+
+                    <p className="Comments__main--comment">
                         {comment.comment}
-                    </div>
+                    </p>
                 </div>
             ))}
                 <div className="Comments__section">
-                    {!loader && user ? 
+                    {!loader && user ?
                     <form onSubmit={postComment}>
                     <input type="text" className="Comments__input" placeholder="Add a comment..."
                     onChange={(e)=>setState(e.target.value)}  value={state} />
                     </form>
-                :''    
+                :''
             }
                 </div>
             </div>
-        
+
     )
 }
 
